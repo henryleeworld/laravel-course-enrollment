@@ -6,7 +6,7 @@ use Illuminate\View\View;
 use App\Discipline;
 use App\Institution;
 
-class SidebarComposer
+class MenuComposer
 {
     /**
      * Bind data to the view.
