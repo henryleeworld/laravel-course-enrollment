@@ -15,7 +15,7 @@
                     <p>焦點話題、本處最新消息、師培法令新知、實習甘苦談、教甄經驗分享、好書閱讀等。目的：師培資訊提供、教師專業成長、實習經驗傳承。
                     </p>
                     <form action="#">
-                        <div class="form-group">
+                        <div class="mb-3">
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" placeholder='輸入電子郵件地址'
                                     onfocus="this.placeholder = ''"

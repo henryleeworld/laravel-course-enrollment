@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Discipline;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyDisciplineRequest;
 use App\Http\Requests\StoreDisciplineRequest;
 use App\Http\Requests\UpdateDisciplineRequest;
+use App\Models\Discipline;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

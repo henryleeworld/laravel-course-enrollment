@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Course;
-use App\User;
+use App\Models\Course;
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
 class EnrollmentController extends Controller
 {
@@ -29,7 +28,7 @@ class EnrollmentController extends Controller
             $user = User::create([
                 'name' => $request->input('name'),
                 'email' => $request->input('email'),
-                'password' => Hash::make($request->input('password')),
+                'password' => $request->input('password'),
             ]);
 
             auth()->login($user);

@@ -10,7 +10,7 @@
         <form action="{{ route("admin.institutions.update", [$institution->id]) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+            <div class="mb-3 {{ $errors->has('name') ? 'has-error' : '' }}">
                 <label for="name">{{ trans('cruds.institution.fields.name') }}*</label>
                 <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($institution) ? $institution->name : '') }}" required>
                 @if($errors->has('name'))
@@ -22,7 +22,7 @@
                     {{ trans('cruds.institution.fields.name_helper') }}
                 </p>
             </div>
-            <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
+            <div class="mb-3 {{ $errors->has('description') ? 'has-error' : '' }}">
                 <label for="description">{{ trans('cruds.institution.fields.description') }}</label>
                 <textarea id="description" name="description" class="form-control ">{{ old('description', isset($institution) ? $institution->description : '') }}</textarea>
                 @if($errors->has('description'))
@@ -34,7 +34,7 @@
                     {{ trans('cruds.institution.fields.description_helper') }}
                 </p>
             </div>
-            <div class="form-group {{ $errors->has('logo') ? 'has-error' : '' }}">
+            <div class="mb-3 {{ $errors->has('logo') ? 'has-error' : '' }}">
                 <label for="logo">{{ trans('cruds.institution.fields.logo') }}</label>
                 <div class="needsclick dropzone" id="logo-dropzone">
 

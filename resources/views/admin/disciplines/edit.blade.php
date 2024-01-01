@@ -10,7 +10,7 @@
         <form action="{{ route("admin.disciplines.update", [$discipline->id]) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+            <div class="mb-3 {{ $errors->has('name') ? 'has-error' : '' }}">
                 <label for="name">{{ trans('cruds.discipline.fields.name') }}*</label>
                 <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($discipline) ? $discipline->name : '') }}" required>
                 @if($errors->has('name'))

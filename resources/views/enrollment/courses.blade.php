@@ -35,7 +35,7 @@
                             @endif
                             <div class="author_info">
                                 <p>狀況：</p>
-                                <h5>{{ App\Enrollment::STATUS_RADIO[$enrollment->status] }}</h5>
+                                <h5>{{ App\Models\Enrollment::STATUS_RADIO[$enrollment->status] }}</h5>
                             </div>
                         </div>
                     </div>

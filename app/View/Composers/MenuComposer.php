@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\View\Composers;
+namespace App\View\Composers;
 
+use App\Models\Discipline;
+use App\Models\Institution;
 use Illuminate\View\View;
-use App\Discipline;
-use App\Institution;
 
 class MenuComposer
 {

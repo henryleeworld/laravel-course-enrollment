@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Course;
-use App\Enrollment;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyEnrollmentRequest;
 use App\Http\Requests\StoreEnrollmentRequest;
 use App\Http\Requests\UpdateEnrollmentRequest;
-use App\User;
+use App\Models\Course;
+use App\Models\Enrollment;
+use App\Models\User;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

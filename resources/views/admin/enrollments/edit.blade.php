@@ -13,7 +13,7 @@
             @if(auth()->user()->isInstitution())
                 <input type="hidden" name="user_id" value="{{ (isset($enrollment) && $enrollment->user) ? $enrollment->user->id : '' }}">
             @else
-                <div class="form-group {{ $errors->has('user_id') ? 'has-error' : '' }}">
+                <div class="mb-3 {{ $errors->has('user_id') ? 'has-error' : '' }}">
                     <label for="user">{{ trans('cruds.enrollment.fields.user') }}*</label>
                     <select name="user_id" id="user" class="form-control select2" required>
                         @foreach($users as $id => $user)
@@ -27,7 +27,7 @@
                     @endif
                 </div>
             @endif
-            <div class="form-group {{ $errors->has('course_id') ? 'has-error' : '' }}">
+            <div class="mb-3 {{ $errors->has('course_id') ? 'has-error' : '' }}">
                 <label for="course">{{ trans('cruds.enrollment.fields.course') }}*</label>
                 <select name="course_id" id="course" class="form-control select2" required>
                     @foreach($courses as $id => $course)
@@ -40,9 +40,9 @@
                     </em>
                 @endif
             </div>
-            <div class="form-group {{ $errors->has('status') ? 'has-error' : '' }}">
+            <div class="mb-3 {{ $errors->has('status') ? 'has-error' : '' }}">
                 <label>{{ trans('cruds.enrollment.fields.status') }}*</label>
-                @foreach(App\Enrollment::STATUS_RADIO as $key => $label)
+                @foreach(App\Models\Enrollment::STATUS_RADIO as $key => $label)
                     <div>
                         <input id="status_{{ $key }}" name="status" type="radio" value="{{ $key }}" {{ old('status', $enrollment->status) === (string)$key ? 'checked' : '' }} required>
                         <label for="status_{{ $key }}">{{ $label }}</label>

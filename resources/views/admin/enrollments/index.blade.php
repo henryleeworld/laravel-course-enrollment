@@ -55,7 +55,7 @@
                                 {{ $enrollment->course->name ?? '' }}
                             </td>
                             <td>
-                                {{ App\Enrollment::STATUS_RADIO[$enrollment->status] ?? '' }}
+                                {{ App\Models\Enrollment::STATUS_RADIO[$enrollment->status] ?? '' }}
                             </td>
                             <td>
                                 @can('enrollment_show')

@@ -10,7 +10,7 @@
         <form action="{{ route("admin.courses.update", [$course->id]) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+            <div class="mb-3 {{ $errors->has('name') ? 'has-error' : '' }}">
                 <label for="name">{{ trans('cruds.course.fields.name') }}*</label>
                 <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($course) ? $course->name : '') }}" required>
                 @if($errors->has('name'))
@@ -22,7 +22,7 @@
                     {{ trans('cruds.course.fields.name_helper') }}
                 </p>
             </div>
-            <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
+            <div class="mb-3 {{ $errors->has('description') ? 'has-error' : '' }}">
                 <label for="description">{{ trans('cruds.course.fields.description') }}</label>
                 <textarea id="description" name="description" class="form-control ">{{ old('description', isset($course) ? $course->description : '') }}</textarea>
                 @if($errors->has('description'))
@@ -34,7 +34,7 @@
                     {{ trans('cruds.course.fields.description_helper') }}
                 </p>
             </div>
-            <div class="form-group {{ $errors->has('photo') ? 'has-error' : '' }}">
+            <div class="mb-3 {{ $errors->has('photo') ? 'has-error' : '' }}">
                 <label for="photo">{{ trans('cruds.course.fields.photo') }}</label>
                 <div class="needsclick dropzone" id="photo-dropzone">
 
@@ -51,7 +51,7 @@
             @if(auth()->user()->isInstitution())
                 <input type="hidden" name="institution_id" value="{{ auth()->user()->institution_id }}">
             @else
-                <div class="form-group {{ $errors->has('institution_id') ? 'has-error' : '' }}">
+                <div class="mb-3 {{ $errors->has('institution_id') ? 'has-error' : '' }}">
                     <label for="institution">{{ trans('cruds.course.fields.institution') }}*</label>
                     <select name="institution_id" id="institution" class="form-control select2" required>
                         @foreach($institutions as $id => $institution)
@@ -65,7 +65,7 @@
                     @endif
                 </div>
             @endif
-            <div class="form-group {{ $errors->has('price') ? 'has-error' : '' }}">
+            <div class="mb-3 {{ $errors->has('price') ? 'has-error' : '' }}">
                 <label for="price">{{ trans('cruds.course.fields.price') }}</label>
                 <input type="number" id="price" name="price" class="form-control" value="{{ old('price', isset($course) ? $course->price : '') }}" step="0.01">
                 @if($errors->has('price'))
@@ -77,7 +77,7 @@
                     {{ trans('cruds.course.fields.price_helper') }}
                 </p>
             </div>
-            <div class="form-group {{ $errors->has('disciplines') ? 'has-error' : '' }}">
+            <div class="mb-3 {{ $errors->has('disciplines') ? 'has-error' : '' }}">
                 <label for="disciplines">{{ trans('cruds.course.fields.disciplines') }}
                     <span class="btn btn-info btn-xs select-all">{{ trans('global.select_all') }}</span>
                     <span class="btn btn-info btn-xs deselect-all">{{ trans('global.deselect_all') }}</span></label>

@@ -39,7 +39,7 @@
                             {{ trans('cruds.enrollment.fields.status') }}
                         </th>
                         <td>
-                            {{ App\Enrollment::STATUS_RADIO[$enrollment->status] ?? '' }}
+                            {{ App\Models\Enrollment::STATUS_RADIO[$enrollment->status] ?? '' }}
                         </td>
                     </tr>
                 </tbody>
